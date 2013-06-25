@@ -33,8 +33,6 @@ Grab [dist/katamari.js](https://raw.github.com/BKWLD/katamari/master/dist/katama
 
 *Supported units*
 
-Currently, the following units:
-
 * meter
 * kilometer
 * mile
