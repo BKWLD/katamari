@@ -10,18 +10,46 @@ Or you can let it choose an appropriate unit of measurement for you:
 	
 ## Installation
 
-Grab dist/katamari.js or dist/katamari.min.js from the repo.
+Grab [dist/katamari.js](https://raw.github.com/BKWLD/katamari/master/dist/katamari.js) or [dist/katamari.min.js](https://raw.github.com/BKWLD/katamari/master/dist/katamari.min.js) from the repo.
 
 #### Require.js, Node.js (AMD, CJS)
 
 	var katamari = require('path/to/katamari.js');
 	console.log(katamari('1 meter'));
 	
-#### CJS (node.js)
+#### In browser
 
 	<script type="text/javascript" src="path/to/katamari.min.js"></script>
 	<script>console.log(katamari('1 meter'));</script>
 
 ## Usage
 
-TODO
+#### katamari ( *mixed* input [, *string* output] [, *object* options]])
+
+* input - If a float, it is treated as meters.  Otherwise, pass it a string using any of the units that Katamari supports.  Ex: "5.2 garden gnomes" or "1 dragon".  Both plural and non plural forms are accepted.* 
+* output - If blank, uses the "default" scale (which auto selects an appropriate unit).  Otherwise, you can use any Katamari unit.* 
+* options - A hash that allows any of the following pairs:
+	* precision - Specify how many decimals to round to, defaults to 1.
+
+*Supported units*
+
+Currently, the following units:
+
+* meter
+* kilometer
+* mile
+* garden gnome
+* bicycle
+* elephant
+* school bus
+* dragon
+* roman colosseum
+* starship enterprise
+* golden gate bridge
+
+And you can also use the following as scales:
+
+* default
+
+
+I encourage folks to submit new units via pull request.
