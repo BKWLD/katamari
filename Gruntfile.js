@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		concat: {
 			options: {
-				separator: ';'
+				separator: ';\n\n'
 			},
 			dist: {
 				src: ['src/**/*.js'],
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			files: ['<%= jshint.files %>'],
-			tasks: ['jshint', 'qunit']
+			tasks: ['concat', 'jshint', 'qunit']
 		}
 	});
 
@@ -48,8 +48,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
-	grunt.registerTask('test', ['jshint', 'qunit']);
+	grunt.registerTask('test', ['concat', 'jshint', 'qunit']);
 
-	grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+	grunt.registerTask('default', ['concat', 'jshint', 'qunit', 'uglify']);
 
 };

@@ -1,4 +1,12 @@
-// Convert distance value to human understable values
+/**
+* A utility to convert distances into terms more easily parsed by humans
+* 
+* @author Robert Reinhard, BKWLD
+* @author Matt Aebersold, BKWLD
+* @license MIT 
+**/
+
+// Wrapper.js will expose this function for AMD, CJS, and DOM
 function _katamari() {
 	
 	// Settings
@@ -22,12 +30,13 @@ function _katamari() {
 		'dragon': 40, // Dragon riders of Pern dragons, http://cl.ly/2f1H0H1p0s2G
 		'roman colosseum': 189, // http://cl.ly/3M2c0N162L2D
 		'starship enterprise': 641, // Picard's entperise, duh http://cl.ly/0R1Q1S0L2B3z
-		'golden gate bridge': 2737, // http://cl.ly/1X0L1a2R120m 
-		
-		// Aliases
-		m: { alias: 'meter'},
-		km: { alias: 'kilometer'}
-		
+		'golden gate bridge': 2737 // http://cl.ly/1X0L1a2R120m
+	};
+	
+	// Aliases
+	var aliases = {
+		m: 'meter',
+		km: 'kilometer'
 	};
 	
 	// Scales
@@ -35,10 +44,30 @@ function _katamari() {
 		'default': ['garden gnome', 'bicycle', 'elephant', 'dragon', 'roman colosseum', 'starship enterprise', 'golden gate bridge']
 	};
 	
+	// Add plural options to the aliases list for quicker lookups
+	var unit;
+	for (unit in units) {
+		if (typeof units[unit] != 'object') continue;
+		else if (units[unit].hasOwnProperty('plural')) aliases[units[unit].plural] = unit;
+	}
+	
+	// Result a unit name since plurals are allowed
+	function resolveUnit(format) {
+		if (units.hasOwnProperty(format)) return format;
+		
+		// Try making a singular version
+		if (format.substr(-1) == 's') {
+			var singular = format.substr(0, format.length-1);
+			if (units.hasOwnProperty(singular)) return singular;
+		}
+		
+		// Check for the format as a plural or alias property
+		if (aliases.hasOwnProperty(format)) return aliases[format];
+	}
+	
 	// Get the raio from a unit
 	function unitRatio(format) {
 		if (typeof units[format] == 'number') return units[format];
-		else if (units[format].hasOwnProperty('alias')) return unitRatio(units[format].alias);
 		else return units[format].ratio;
 	}
 	
@@ -47,7 +76,7 @@ function _katamari() {
 
 		// If the output format is not a scale, just return it's ratio directly
 		if (!scales.hasOwnProperty(format)) return format;
-		
+				
 		// Otherwise, move up the scale until we produce a conversion of < 2, 
 		// then return the previous value
 		var i, ratio, last_ratio, scale = scales[format];
@@ -65,7 +94,7 @@ function _katamari() {
 	
 	// Handle plurarilty
 	function plural(format) {
-		if (typeof format == 'object' && units[format].hasOwnProperty('plural')) return units[format].plural;
+		if (typeof units[format] == 'object' && units[format].hasOwnProperty('plural')) return units[format].plural;
 		else return format+'s';
 	}
 	
@@ -77,15 +106,16 @@ function _katamari() {
 		if (!options.hasOwnProperty('precision')) options.precision = precision;
 		
 		// Validate input and set defaults
-		var matches = String(input).match(/^(\d+) *(\w+)?$/i);
-		var distance = parseInt(matches[1], 10);
+		var matches = String(input).match(/^([\d.]+) *(.*)$/i);
+		var distance = parseFloat(matches[1]);
 		if (!distance) return false;
 		var input_format = matches[2];
 		if (!input_format) input_format = 'meter';
-		if (!units.hasOwnProperty(input_format)) return false;
-				// Validate output formats
+		if (!(input_format = resolveUnit(input_format))) return false;
+		
+		// Validate output formats
 		if (!output_format) output_format = 'default';
-		if (!scales.hasOwnProperty(output_format) && !units.hasOwnProperty(output_format)) return false;
+		if (!(scales.hasOwnProperty(output_format) || (output_format = resolveUnit(output_format)))) return false;
 		
 		// Determine ratios and convert
 		var in_ratio = unitRatio(input_format);
@@ -96,27 +126,8 @@ function _katamari() {
 		// Produce string output
 		var places = Math.pow(10, options.precision);
 		distance = Math.round(distance*places)/places;
-		if (distance > 1) return distance+' '+plural(output_format);
+		if (distance > 1 || distance === 0) return distance+' '+plural(output_format);
 		else return distance+' '+output_format;
 		
 	};
 }
-
-// Expose module via AMD, CJS, or to window via as described here:
-// http://daffl.github.io/2012/02/22/javascript-modules.html
-(function(namespace) {
-	if(typeof define == "undefined") {
-		define = function(fn) {
-			var res = fn();
-			if(typeof exports == "undefined") {
-				window[namespace] = res;
-			} else {
-				module.exports = res;
-			}
-		};
-	}
-	
-	define(function() {
-		return _katamari();
-	});
-})('katamari');
