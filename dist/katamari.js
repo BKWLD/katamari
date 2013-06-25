@@ -10,7 +10,7 @@
 function _katamari() {
 	
 	// Settings
-	var precision = 2;
+	var precision = 1;
 	
 	// Conversions
 	var units = {
@@ -126,7 +126,7 @@ function _katamari() {
 		// Produce string output
 		var places = Math.pow(10, options.precision);
 		distance = Math.round(distance*places)/places;
-		if (distance > 1 || distance === 0) return distance+' '+plural(output_format);
+		if (distance !== 1) return distance+' '+plural(output_format);
 		else return distance+' '+output_format;
 		
 	};

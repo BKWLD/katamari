@@ -2,13 +2,13 @@
 
 // Test scaling
 test("Default scale", function() {
-  equal(katamari(1), '7.87 garden gnomes');
-  equal(katamari(10), '5.62 bicycles');
-  equal(katamari(50), '7.14 elephants');
+  equal(katamari(1), '7.9 garden gnomes');
+  equal(katamari(10), '5.6 bicycles');
+  equal(katamari(50), '7.1 elephants');
   equal(katamari(100), '2.5 dragons');
-  equal(katamari(1000), '5.29 roman colosseums');
+  equal(katamari(1000), '5.3 roman colosseums');
   equal(katamari(5000), '7.8 starship enterprises');
-  equal(katamari(10000), '3.65 golden gate bridges');
+  equal(katamari(10000), '3.7 golden gate bridges');
 });
 
 // Test plural support
