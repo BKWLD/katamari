@@ -9,8 +9,11 @@
 // Wrapper.js will expose this function for AMD, CJS, and DOM
 function _katamari() {
 	
-	// Settings
-	var precision = 1;
+	// Default settings
+	var defaults = {
+		precision: 1,
+		output: 'string'
+	};
 	
 	// Conversions
 	var units = {
@@ -102,8 +105,12 @@ function _katamari() {
 	return function(input, output_format, options) {
 		
 		// Set default options
-		if (!options) options = {};
-		if (!options.hasOwnProperty('precision')) options.precision = precision;
+		if (!options) options = defaults;
+		else if (typeof options == 'object') {
+			for (var option in defaults) {
+				if (!options.hasOwnProperty(option)) options[option] = defaults[option];
+			}
+		}
 		
 		// Validate input and set defaults
 		var matches = String(input).match(/^([\d.]+) *(.*)$/i);
@@ -123,11 +130,20 @@ function _katamari() {
 		output_format = findRatio(output_format, distance);
 		distance /= unitRatio(output_format);
 		
-		// Produce string output
+		// Produce output
 		var places = Math.pow(10, options.precision);
 		distance = Math.round(distance*places)/places;
-		if (distance !== 1) return distance+' '+plural(output_format);
-		else return distance+' '+output_format;
-		
+		switch(options.output) {
+			case 'string':
+				return distance+' '+(distance === 1 ? output_format : plural(output_format));
+			case 'number':
+				return distance;
+			case 'object':
+			return {
+				value: distance,
+				unit: output_format,
+				pluralled: (distance === 1 ? output_format : plural(output_format))
+			};
+		}
 	};
 }

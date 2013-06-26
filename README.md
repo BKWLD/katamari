@@ -2,12 +2,16 @@
 
 Being told something is 300 feet away or 50 meters or 2.4 miles can be tough to visualize.  Katamari turns distances into multiples of objects that ARE easy to visualize.  You can use it to convert one unit to another:
 
-	katamari('1 meter', 'bicycles'); // 0.6 bicycles
+	katamari('1 meter', 'bicycles'); // "0.6 bicycles"
 
 Or you can let it choose an appropriate unit of measurement for you:
 
-	katamari('1 meter'); // 7.8 garden gnomes
+	katamari('1 meter'); // "7.8 garden gnomes"
 	
+You can pass a hash of options to tweak the output:
+
+	katamari('0.02km', 'default', {precision: 3, output: 'object'}); // {value: 2.857, unit: "elephant", pluralled: "elephants"}
+
 ## Installation
 
 Grab [dist/katamari.js](https://raw.github.com/BKWLD/katamari/master/dist/katamari.js) or [dist/katamari.min.js](https://raw.github.com/BKWLD/katamari/master/dist/katamari.min.js) from the repo.
@@ -24,12 +28,13 @@ Grab [dist/katamari.js](https://raw.github.com/BKWLD/katamari/master/dist/katama
 
 ## Usage
 
-#### katamari ( *mixed* input [, *string* output] [, *object* options]])
+#### katamari ( *mixed* input [, *string* format] [, *object* options]])
 
-* input - If a float, it is treated as meters.  Otherwise, pass it a string using any of the units that Katamari supports.  Ex: "5.2 garden gnomes" or "1 dragon".  Both plural and non plural forms are accepted.* 
-* output - If blank, uses the "default" scale (which auto selects an appropriate unit).  Otherwise, you can use any Katamari unit.* 
+* input - The input distance. If a float, it is treated as meters.  Otherwise, pass it a string using any of the units that Katamari supports.  Ex: "5.2 garden gnomes" or "1 dragon".  Both plural and non plural forms are accepted.* 
+* format - The output format. If blank, uses the "default" scale (which auto selects an appropriate unit).  Otherwise, you can use any Katamari unit.* 
 * options - A hash that allows any of the following pairs:
 	* precision - Specify how many decimals to round to, defaults to 1.
+	* output - How to return the converted input.  The default is "string" which returns a response like `14.2 meters`.  Set to "number" to return just the value (ex: `14.2`); this wouldn't make sense if you set the format to a scale.  Or, set to "object" to return a hash that looks like `{value:14.2, unit:'meter', pluralled:'meters'}`.
 
 *Supported units*
 

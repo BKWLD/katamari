@@ -33,3 +33,11 @@ test("Precision", function() {
   equal(katamari(1, 'garden gnomes', {precision: 3}), '7.874 garden gnomes');
   equal(katamari(1, 'garden gnomes', {precision: 5}), '7.87402 garden gnomes');
 });
+
+// Test ouput formats
+test('Output', function() {
+	equal(katamari(1, 'meter', {output: 'string'}), '1 meter');
+  equal(katamari(1, 'meter', {output: 'number'}), 1);
+  deepEqual(katamari(1, 'meter', {output: 'object'}), {value:1, unit:'meter', pluralled:'meter'});
+  deepEqual(katamari(2, 'meter', {output: 'object'}), {value:2, unit:'meter', pluralled:'meters'});
+});
