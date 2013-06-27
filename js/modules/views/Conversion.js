@@ -4,7 +4,8 @@ define(function(require) {
 	// Dependencies
 	var $ = require('jquery'),
 		_ = require('underscore'),
-		Backbone = require('backbone');
+		Backbone = require('backbone'),
+		app = require('modules/app');
 	
 	// Init view
 	var View = {

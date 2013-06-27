@@ -192,3 +192,8 @@ h2 {
 .slider .scale li.seven {
   left: 90%;
 }
+
+/* line 1, sass/partials/_output.scss */
+.output {
+  margin: 30px 0px;
+}
