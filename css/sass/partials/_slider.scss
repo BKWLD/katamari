@@ -1,0 +1,57 @@
+.slider {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin: 50px auto;
+
+	.grabber {
+		position: absolute;
+		width: 30px;
+		height: 15px;
+		background-color: #777;
+		border: 1px solid #555;
+		top: 10px;
+		left: 10px;
+		z-index: 2;
+		cursor: pointer;
+		@include border-radius(3px);
+		@include transition(all 100ms ease-out);
+
+		&:hover {
+			@include scale(1.2);
+		}
+	}
+
+	.bg {
+		position: absolute;
+		height: 1px;
+		width: 100%;
+		background-color: #ccc;
+		border-bottom: 1px solid #fff;
+		z-index: 1;
+		top: 18px;
+	}
+
+	.scale {
+		position: absolute;
+		top: 40px;
+		width: 100%;
+
+		li {
+			position: absolute;
+			width: 100px;
+			text-align: center;
+			font-size: 10px;
+			color: #999;
+
+			&.one { left: 0; }
+			&.two { left: 15%; }
+			&.three { left: 30%; }
+			&.four { left: 45%; }
+			&.five { left: 60%; }
+			&.six { left: 75%; }
+			&.seven { left: 90%; }
+
+		}
+	}
+}

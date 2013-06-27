@@ -17,15 +17,15 @@ define('main', function (require) {
 	
 	var $ = require('jquery'),
 		_ = require('underscore'),
-		app = require('modules/app');
+		app = require('modules/app'),
+		Slider = require('modules/views/Slider'),
+		Icons = require('modules/views/Icons');
 	
-	// start
-	
+	// Instantiate backbone views
+	var slider = new Slider({el: $('.slider')[0]});
+	var icons = new Icons({el: $('.icons')[0]});
 
 });
 
 // Start the application
 require(['main']);
-
-
-
