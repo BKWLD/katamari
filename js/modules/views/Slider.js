@@ -10,7 +10,8 @@ define(function(require) {
 	// Init view
 	var View = {
 		isMouseDown: false,
-		isMouseDragging: false
+		isMouseDragging: false,
+		power: 1.3
 	};
 	
 	// Constructor
@@ -28,12 +29,22 @@ define(function(require) {
 
 		// attach the mouse up listener on the document
 		$(document).on('mouseup', this.onMouseUp);
+
+		//setup scale
+		this.setupScale();
 		
 	};
 
 	// Events
 	View.events = {
 		'mousedown .grabber': 'onMouseDown'
+	};
+
+	// Set up the scale values
+	View.setupScale = function() {
+		this.$scale.find('li').each(function(e) {
+			$(this).html(Math.round(Math.pow(parseFloat($(this).css('left')) + 50, 1.3)));
+		});
 	};
 
 	// Mouse Events
@@ -55,7 +66,7 @@ define(function(require) {
 		var x = e.pageX - this.$el.offset().left;
 
 		// get an exponent
-		var exp = Math.pow(x, 2);
+		var exp = Math.pow(x, this.power);
 		app.trigger('updateOutput', {exp: exp});
 
 		//constrain the movement by bounds and move the dragger
