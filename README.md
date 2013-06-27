@@ -54,5 +54,10 @@ And you can also use the following as scales:
 
 * default
 
+## Contribute
 
-I encourage folks to submit new units via pull request.
+I encourage folks to submit new units (or whatever) via pull request.  Make sure to run the unit tests or add to them as appropriate.  To run the tests and build the dist version of Katamari:
+
+1. Install npm and run `npm install`
+2. Install [grunt globally](http://gruntjs.com/getting-started#installing-the-cli)
+3. Run `grunt test` from the repo directory
