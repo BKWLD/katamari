@@ -11,7 +11,8 @@ define(function(require) {
 	var View = {
 		isMouseDown: false,
 		isMouseDragging: false,
-		power: 1.3
+		power: 1.3,
+		divisor: 2
 	};
 	
 	// Constructor
@@ -46,7 +47,7 @@ define(function(require) {
 	// Set up the scale values
 	View.setupScale = function() {
 		this.$scale.find('li').each(function(e) {
-			$(this).html(Math.round(Math.pow(parseFloat($(this).css('left')) + 50, 1.3)) + 'm');
+			$(this).html(Math.round(Math.pow((parseFloat($(this).css('left')) + 50)/2, 1.3)) + 'm');
 		});
 	};
 
@@ -70,7 +71,7 @@ define(function(require) {
 
 		//constrain the movement by bounds and move the dragger
 		if(x >= 0 && x <= this.$el.width()) {
-			var exp = Math.pow(x, this.power);
+			var exp = Math.pow(x/this.divisor, this.power);
 			app.trigger('updateOutput', {exp: exp});
 			this.$grabber.css('left', x - (this.$grabber.width()/2));
 		}
@@ -78,7 +79,7 @@ define(function(require) {
 
 	View.initialPotition = function() {
 		var x = this.$el.offset().left - 60;
-		var exp = Math.pow(x, this.power);
+		var exp = Math.pow(x/this.divisor, this.power);
 		_.defer(function() { app.trigger('updateOutput', {exp: exp}); });
 	};
 
