@@ -10,7 +10,8 @@ define(function(require) {
 	var View = {
 		letters: ['K', 'a', 't', 'a', 'm', 'a', 'r', 'i'],
 		colors: ['#fb5e73', '#7daa1b', '#fdb1be', '#94be14', '#e3e4ab', '#794fa5', '#4e85bb', '#e1ea81', '#d59647', '#f6988e', '#e4475a', '#efae3a', '#2f5995'],
-		colorInterval: null
+		colorInterval: null,
+		changeSpeed: 80
 	};
 	
 	// Constructor
@@ -37,7 +38,7 @@ define(function(require) {
 	// Randomize all the colors on mouse over
 	View.onLetterOver = function(e) {
 		this.setColor($(e.currentTarget));
-		this.colorInterval = setInterval(_.bind(function() { this.setColor($(e.currentTarget)); }, this), 50);
+		this.colorInterval = setInterval(_.bind(function() { this.setColor($(e.currentTarget)); }, this), this.changeSpeed);
 	};
 
 	View.onLetterOut = function(e) {

@@ -8,17 +8,13 @@ body {
   @include background-image(linear-gradient(#0770b1, #99cde3));
 }
 
-h1, h2 {
+h1 {
   font-family: "Sniglet";
   font-weight: 900;
-}
-
-h1.logo {
   color: #222;
   font-size: 120px;
   margin-bottom: 40px;
   text-align: center;
-  text-shadow: 0 0 4px #000;
 
   span { cursor: pointer; }
 }
@@ -26,11 +22,65 @@ h1.logo {
 h2 {
   font-size: 17px;
   margin-bottom: 20px;
+  text-align: center;
+  font-weight: 900;
+  text-align: center;
+
+  a {
+  	color: #222;
+  }
 }
 
 #wrap {
   position: relative;
-  width: 900px;
-  min-height: 800px;
+  width: 800px;
+  min-height: 1500px;
   margin: 50px auto;
+}
+
+.king {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.about {
+	p {
+		width: 500px;
+		line-height: 20px;
+		margin: 0 auto;
+	}
+}
+
+.module {
+	background-color: #98cce2;
+	border: 1px solid darken(#2e89b0, 10%);
+	margin: 40px auto;
+	padding: 30px;
+	@include border-radius(20px);
+}
+
+.cta {
+	padding-top: 30px;
+
+	ul {
+		text-align: center;
+		width: 100%;
+
+		li {
+			display: inline-block;
+			margin: 20px;
+			a {
+				display: inline;
+				padding: 15px 30px;
+				text-decoration: none;
+				font-weight: 900;
+				@include background-image(linear-gradient(#ffffff, #aaaaaa));
+				border: 1px solid #555;
+				@include border-radius(7px);
+				color: #404040;
+				@include text-shadow(rgba(255, 255, 255, 1), 0, 0, 0);
+			}
+		}
+	}
 }

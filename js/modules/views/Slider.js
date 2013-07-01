@@ -46,7 +46,7 @@ define(function(require) {
 	// Set up the scale values
 	View.setupScale = function() {
 		this.$scale.find('li').each(function(e) {
-			$(this).html(Math.round(Math.pow(parseFloat($(this).css('left')) + 50, 1.3)));
+			$(this).html(Math.round(Math.pow(parseFloat($(this).css('left')) + 50, 1.3)) + 'm');
 		});
 	};
 
