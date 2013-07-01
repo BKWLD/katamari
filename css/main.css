@@ -74,33 +74,49 @@ h1, h2, h3, h4, h5 {
 /* Views */
 /* line 1, sass/partials/_common.scss */
 body {
-  color: #666;
-  font-family: "Chivo";
+  color: #222;
+  font-family: "Raleway";
   font-weight: 400;
-  background-color: #efefef;
+  background-color: #0770b1;
+  position: relative;
+  height: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0770b1), color-stop(100%, #99cde3));
+  background-image: -webkit-linear-gradient(#0770b1, #99cde3);
+  background-image: -moz-linear-gradient(#0770b1, #99cde3);
+  background-image: -o-linear-gradient(#0770b1, #99cde3);
+  background-image: linear-gradient(#0770b1, #99cde3);
 }
 
-/* line 8, sass/partials/_common.scss */
+/* line 11, sass/partials/_common.scss */
 h1, h2 {
+  font-family: "Sniglet";
   font-weight: 900;
 }
 
-/* line 12, sass/partials/_common.scss */
-h1 {
-  font-size: 30px;
-  margin-bottom: 20px;
+/* line 16, sass/partials/_common.scss */
+h1.logo {
+  color: #222;
+  font-size: 120px;
+  margin-bottom: 40px;
+  text-align: center;
+  text-shadow: 0 0 4px black;
+}
+/* line 23, sass/partials/_common.scss */
+h1.logo span {
+  cursor: pointer;
 }
 
-/* line 17, sass/partials/_common.scss */
+/* line 26, sass/partials/_common.scss */
 h2 {
   font-size: 17px;
   margin-bottom: 20px;
 }
 
-/* line 22, sass/partials/_common.scss */
+/* line 31, sass/partials/_common.scss */
 #wrap {
   position: relative;
   width: 900px;
+  min-height: 800px;
   margin: 50px auto;
 }
 
