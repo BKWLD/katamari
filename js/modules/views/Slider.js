@@ -27,6 +27,9 @@ define(function(require) {
 		var throttledMouseMove = _.throttle(this.onMouseMove, 100);
 		this.$el.on('mousemove', throttledMouseMove);
 
+		//set up the initial positining here
+		this.initialPotition();
+
 		// attach the mouse up listener on the document
 		$(document).on('mouseup', this.onMouseUp);
 
@@ -71,6 +74,13 @@ define(function(require) {
 			app.trigger('updateOutput', {exp: exp});
 			this.$grabber.css('left', x - (this.$grabber.width()/2));
 		}
+	};
+
+	View.initialPotition = function() {
+		var x = this.$el.offset().left - 60;
+		console.log(x);
+		var exp = Math.pow(x, this.power);
+		_.defer(function() { app.trigger('updateOutput', {exp: exp}); });
 	};
 
 	// Return the view
