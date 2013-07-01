@@ -5,11 +5,12 @@ define(function(require) {
 	var $ = require('jquery'),
 		_ = require('underscore'),
 		Backbone = require('backbone'),
-		app = require('modules/app');
+		app = require('modules/app'),
+		katamari = require('plugins/katamari');
 	
 	// Init view
 	var View = {
- 
+ 		meters: null
 	};
 	
 	// Constructor
@@ -17,7 +18,8 @@ define(function(require) {
 		_.bindAll(this);
 		
 		// Selectors
-		this.$exp = this.$('p').find('span');
+		this.$meters = this.$('.meters').find('span');
+		this.$katamari = this.$('.katamari').find('span');
 		
 		// listen for output change
 		app.on('updateOutput', this.updateOutput);
@@ -25,7 +27,9 @@ define(function(require) {
 
 	// Update the output view here
 	View.updateOutput = function(params) {
-		this.$exp.html(params.exp);
+		this.meters = Math.round(params.exp);
+		this.$meters.html(this.meters);
+		this.$katamari.html(katamari(this.meters));
 	};	
 	
 	// Return the view
