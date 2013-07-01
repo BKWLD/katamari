@@ -65,12 +65,12 @@ define(function(require) {
 		//get current x position relative to the div
 		var x = e.pageX - this.$el.offset().left;
 
-		// get an exponent
-		var exp = Math.pow(x, this.power);
-		app.trigger('updateOutput', {exp: exp});
-
 		//constrain the movement by bounds and move the dragger
-		if(x >= 0 && x <= this.$el.width()) this.$grabber.css('left', x - (this.$grabber.width()/2));
+		if(x >= 0 && x <= this.$el.width()) {
+			var exp = Math.pow(x, this.power);
+			app.trigger('updateOutput', {exp: exp});
+			this.$grabber.css('left', x - (this.$grabber.width()/2));
+		}
 	};
 
 	// Return the view
