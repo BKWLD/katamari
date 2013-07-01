@@ -78,7 +78,6 @@ define(function(require) {
 
 	View.initialPotition = function() {
 		var x = this.$el.offset().left - 60;
-		console.log(x);
 		var exp = Math.pow(x, this.power);
 		_.defer(function() { app.trigger('updateOutput', {exp: exp}); });
 	};

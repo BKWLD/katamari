@@ -28,7 +28,6 @@ define(function(require) {
 
 	// Update the output view here
 	View.updateOutput = function(params) {
-		console.log('in');
 		this.meters = Math.round(params.exp);
 		this.$meters.html(this.meters);
 		this.$katamari.html(katamari(this.meters));
