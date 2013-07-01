@@ -1,7 +1,7 @@
 // Set the require.js configuration for the application
 require.config({
 	
-	baseUrl: '/js/',
+	baseUrl: 'js/',
 	
 	// Set common library paths
 	paths: {
@@ -25,7 +25,7 @@ define('main', function (require) {
 	// Instantiate backbone views
 	var slider = new Slider({el: $('.slider')[0]});
 	var conversion = new Conversion({el: $('.conversion')[0]});
-	var output = new Output({el: $('.output')[0]})
+	var output = new Output({el: $('.output')[0]});
 
 });
 
