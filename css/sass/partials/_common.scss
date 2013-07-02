@@ -8,30 +8,19 @@ body {
   @include background-image(linear-gradient(#0770b1, #99cde3));
 }
 
-h1 {
-	font-family: "Sniglet";
-	font-weight: 900;
-	color: #222;
-	font-size: 120px;
-	margin-bottom: 40px;
-	text-align: center;
-	-webkit-text-stroke-width: 5px;
-	-webkit-text-stroke-color: white;
-	letter-spacing: -10px;
-
-  span { cursor: pointer; }
-}
-
 h2 {
-  font-size: 17px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: 900;
-  text-align: center;
+	font-family: "Sniglet";
+	font-size: 17px;
+	margin-bottom: 20px;
+	font-weight: 900;
+	color: white;
+	text-shadow: 2px 2px 0 magenta;
+	font-size: 26px;
+	margin-top: 50px;
 
-  a {
-  	color: #222;
-  }
+	a {
+		color: #222;
+	}
 }
 
 #wrap {
@@ -47,20 +36,16 @@ h2 {
 	right: 0;
 }
 
-.about {
-	p {
-		width: 500px;
-		line-height: 20px;
-		margin: 0 auto;
-	}
+p.white {
+	line-height: 20px;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 20px;
+	line-height: 30px;
 }
 
 .module {
-	background-color: #98cce2;
-	border: 1px solid darken(#2e89b0, 10%);
-	margin: 40px auto;
 	padding: 30px;
-	@include border-radius(20px);
 }
 
 .cta {
@@ -73,16 +58,25 @@ h2 {
 		li {
 			display: inline-block;
 			margin: 20px;
+
 			a {
+				font-family: "Sniglet";
 				display: inline;
-				padding: 15px 30px;
+				padding: 10px 20px 8px 20px;
 				text-decoration: none;
 				font-weight: 900;
-				@include background-image(linear-gradient(#ffffff, #aaaaaa));
-				border: 1px solid #555;
-				@include border-radius(7px);
-				color: #404040;
-				@include text-shadow(rgba(255, 255, 255, 1), 0, 0, 0);
+				font-size: 25px;
+				@include background-image(linear-gradient(#ff74f7, #f150ec));
+				border: 4px solid #fff;
+				@include border-radius(30px);
+				color: #fff;
+				-webkit-box-shadow:0 0 15px rgba(0, 0, 0, .5); 
+				-moz-box-shadow: 0 0 15px rgba(0, 0, 0, .5); 
+				box-shadow:0 0 15px rgba(0, 0, 0, .5);
+				text-shadow: 2px 2px 0 rgba(0, 0, 0, .2);
+
+				&:hover { @include background-image(linear-gradient(#f150ec, #ff74f7)); }
+
 			}
 		}
 	}

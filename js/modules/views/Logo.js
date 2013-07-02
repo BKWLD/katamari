@@ -9,7 +9,7 @@ define(function(require) {
 	// Init view
 	var View = {
 		letters: ['K', 'a', 't', 'a', 'm', 'a', 'r', 'i'],
-		colors: ['#fb5e73', '#7daa1b', '#fdb1be', '#94be14', '#e3e4ab', '#794fa5', '#4e85bb', '#e1ea81', '#d59647', '#f6988e', '#e4475a', '#efae3a', '#2f5995'],
+		colors: ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8'],
 		colorInterval: null,
 		changeSpeed: 80
 	};
@@ -47,8 +47,9 @@ define(function(require) {
 	
 	// Set the color of the letter
 	View.setColor = function(letter) {
+		letter.removeClass();
 		var randColor = Math.floor(Math.random()*this.colors.length);
-		letter.css('color', this.colors[randColor]);
+		letter.addClass(this.colors[randColor]);
 	};
 
 	// Return the view
