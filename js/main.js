@@ -25,9 +25,12 @@ define('main', function (require) {
 	
 	// Instantiate backbone views
 	var slider = new Slider({el: $('.slider')[0]});
-	var conversion = new Converter({el: $('.converter')[0]});
 	var output = new Output({el: $('.output')[0]});
 	var logo = new Logo({el: $('.logo')[0]});
+
+	// Conversion views
+	var conversionUnit = new Converter({el: $('.converter').find('.unit')[0]});
+	var conversionKatamari = new Converter({el: $('.converter').find('.katamari')[0]});
 
 });
 
