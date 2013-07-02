@@ -19,13 +19,13 @@ define('main', function (require) {
 		_ = require('underscore'),
 		app = require('modules/app'),
 		Slider = require('modules/views/Slider'),
-		Conversion = require('modules/views/Conversion'),
+		Converter = require('modules/views/Converter'),
 		Output = require('modules/views/Output'),
 		Logo = require('modules/views/Logo');
 	
 	// Instantiate backbone views
 	var slider = new Slider({el: $('.slider')[0]});
-	var conversion = new Conversion({el: $('.conversion')[0]});
+	var conversion = new Converter({el: $('.converter')[0]});
 	var output = new Output({el: $('.output')[0]});
 	var logo = new Logo({el: $('.logo')[0]});
 

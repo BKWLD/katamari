@@ -95,13 +95,16 @@ h1 {
   font-size: 120px;
   margin-bottom: 40px;
   text-align: center;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: white;
+  letter-spacing: -10px;
 }
-/* line 19, sass/partials/_common.scss */
+/* line 22, sass/partials/_common.scss */
 h1 span {
   cursor: pointer;
 }
 
-/* line 22, sass/partials/_common.scss */
+/* line 25, sass/partials/_common.scss */
 h2 {
   font-size: 17px;
   margin-bottom: 20px;
@@ -109,12 +112,12 @@ h2 {
   font-weight: 900;
   text-align: center;
 }
-/* line 29, sass/partials/_common.scss */
+/* line 32, sass/partials/_common.scss */
 h2 a {
   color: #222;
 }
 
-/* line 34, sass/partials/_common.scss */
+/* line 37, sass/partials/_common.scss */
 #wrap {
   position: relative;
   width: 800px;
@@ -122,21 +125,21 @@ h2 a {
   margin: 50px auto;
 }
 
-/* line 41, sass/partials/_common.scss */
+/* line 44, sass/partials/_common.scss */
 .king {
   position: absolute;
   bottom: 0;
   right: 0;
 }
 
-/* line 48, sass/partials/_common.scss */
+/* line 51, sass/partials/_common.scss */
 .about p {
   width: 500px;
   line-height: 20px;
   margin: 0 auto;
 }
 
-/* line 55, sass/partials/_common.scss */
+/* line 58, sass/partials/_common.scss */
 .module {
   background-color: #98cce2;
   border: 1px solid #236a88;
@@ -149,21 +152,21 @@ h2 a {
   border-radius: 20px;
 }
 
-/* line 63, sass/partials/_common.scss */
+/* line 66, sass/partials/_common.scss */
 .cta {
   padding-top: 30px;
 }
-/* line 66, sass/partials/_common.scss */
+/* line 69, sass/partials/_common.scss */
 .cta ul {
   text-align: center;
   width: 100%;
 }
-/* line 70, sass/partials/_common.scss */
+/* line 73, sass/partials/_common.scss */
 .cta ul li {
   display: inline-block;
   margin: 20px;
 }
-/* line 73, sass/partials/_common.scss */
+/* line 76, sass/partials/_common.scss */
 .cta ul li a {
   display: inline;
   padding: 15px 30px;
@@ -321,4 +324,85 @@ h2 a {
 /* line 34, sass/partials/_output.scss */
 .output p span {
   font-weight: 900;
+}
+
+/* line 5, sass/partials/_converter.scss */
+.converter {
+  position: relative;
+  height: 120px;
+}
+/* line 9, sass/partials/_converter.scss */
+.converter .input {
+  width: 40%;
+  position: absolute;
+  top: 40px;
+  text-align: center;
+}
+/* line 15, sass/partials/_converter.scss */
+.converter .input.unit {
+  left: 0;
+}
+/* line 16, sass/partials/_converter.scss */
+.converter .input.katamari {
+  right: 0;
+}
+/* line 18, sass/partials/_converter.scss */
+.converter .input input[type=text] {
+  border: 3px solid white;
+  width: 200px;
+  padding: 10px 0px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+  -moz-border-radius-topleft: 7px;
+  -webkit-border-top-left-radius: 7px;
+  border-top-left-radius: 7px;
+  -moz-border-radius-topright: 7px;
+  -webkit-border-top-right-radius: 7px;
+  border-top-right-radius: 7px;
+}
+/* line 31, sass/partials/_converter.scss */
+.converter .middle {
+  position: absolute;
+  top: 50px;
+  left: 48%;
+  font-size: 80px;
+  font-weight: 900;
+  font-family: "Sniglet";
+  color: #fff;
+  text-shadow: 3px 3px 0px magenta;
+}
+/* line 42, sass/partials/_converter.scss */
+.converter select {
+  position: relative;
+  margin-top: -2px;
+  display: inline-block;
+  width: 206px;
+  background-color: #fff;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+  border-top: 0px;
+  cursor: pointer;
+  left: 0;
+  padding: 5px 0px;
+  font-size: 16px;
+  line-height: 1;
+  height: 34px;
+  -webkit-appearance: none;
+  text-align: center;
+  color: #98cce2;
+  border-radius: 0;
+  -moz-border-radius-bottomleft: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  -moz-border-radius-bottomright: 7px;
+  -webkit-border-bottom-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+/* line 64, sass/partials/_converter.scss */
+.converter select:hover {
+  background-color: white;
 }

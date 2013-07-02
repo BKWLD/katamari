@@ -1,0 +1,67 @@
+// Vars
+$menuWidth: 200px;
+$borderColor: #ffffff;
+
+.converter {
+	position: relative;
+	height: 120px;
+
+	.input {
+		width: 40%;
+		position: absolute;
+		top: 40px;
+		text-align: center;
+
+		&.unit { left: 0; }
+		&.katamari { right: 0; }
+
+		input[type=text] {
+			border: 3px solid $borderColor;
+			width: $menuWidth;
+			padding: 10px 0px;
+			font-size: 30px;
+			font-weight: bold;
+			text-align: center;
+			color: $borderColor;
+			background-color: transparent;
+			@include border-top-radius(7px);
+		}
+	}
+
+	.middle {
+		position: absolute;
+		top: 50px;
+		left: 48%;
+		font-size: 80px;
+		font-weight: 900;
+		font-family: "Sniglet";
+		color: #fff;
+		text-shadow: 3px 3px 0px magenta;
+	}
+
+	select {
+		position: relative;
+		margin-top: -2px;
+		display: inline-block;
+		width: $menuWidth + 6px;
+		background-color: #fff;
+		border-left: 3px solid $borderColor;
+		border-right: 3px solid $borderColor;
+		border-bottom: 3px solid $borderColor;
+		border-top: 0px;
+		cursor: pointer;
+		left: 0;
+		padding: 5px 0px;
+		font-size: 16px;
+		line-height: 1;
+		height: 34px;
+		-webkit-appearance: none;
+		text-align: center;
+		color: #98cce2;
+		border-radius: 0;
+		@include border-bottom-radius(7px);
+
+		&:hover { background-color: white; }
+	}
+
+}
