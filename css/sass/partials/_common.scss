@@ -7,6 +7,7 @@ body {
   position: relative;
   height: 100%;
   @include background-image(linear-gradient(#0770b1, #99cde3));
+  -webkit-font-smoothing: antialiased;
 }
 
 h2 {
