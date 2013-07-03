@@ -23,12 +23,12 @@ define(function(require) {
 		this.$icons = this.$('.icons');
 		
 		// listen for output change
-		// app.on('updateOutput', this.updateOutput);
+		app.on('updateOutput', this.updateOutput);
 	};
 
 	// Update the output view here
 	View.updateOutput = function(params) {
-		this.meters = Math.round(params.exp);
+		this.meters = params.meters;
 		this.$meters.html(this.meters);
 		this.$katamari.html(katamari(this.meters));
 

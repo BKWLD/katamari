@@ -23,19 +23,25 @@ define(function(require) {
 		this.$grabber = this.$('.grabber');
 		this.$bg = this.$('.bg');
 		this.$scale = this.$('.scale');
+		this.width = this.$el.width();
+		this.grabber_width = this.$grabber.width();
+		this.offset_left = this.$el.offset().left;
 
 		// throttled mouse move
 		var throttledMouseMove = _.throttle(this.onMouseMove, 20);
 		this.$el.on('mousemove', throttledMouseMove);
 
-		//set up the initial positining here
-		this.initialPotition();
-
 		// attach the mouse up listener on the document
 		$(document).on('mouseup', this.onMouseUp);
 
-		//setup scale
+		// Setup scale
 		this.setupScale();
+		
+		// Assign an initial position
+		_.defer(_.bind(function() {
+			var x = this.$grabber.position().left + this.grabber_width / 2;
+			app.trigger('updateOutput', {x:x, meters: this.scale(x)});
+		}, this));
 		
 	};
 
@@ -43,12 +49,16 @@ define(function(require) {
 	View.events = {
 		'mousedown .grabber': 'onMouseDown'
 	};
+	
+	// Convert an x offset to meters.  This is the what powers the exponential equation
+	View.scale = function(x) {
+		return Math.pow(x/30, 3.6);
+	};
 
 	// Set up the scale values
 	View.setupScale = function() {
-		this.$scale.find('li').each(function(e) {
-			$(this).html(Math.round(Math.pow((parseFloat($(this).css('left')) + 50)/2, 1.3)) + 'm');
-		});
+		this.$scale.find('.left').text(Math.round(this.scale(0))+'m');
+		this.$scale.find('.right').text(Math.round(this.scale(this.width))+'m');
 	};
 
 	// Mouse Events
@@ -62,25 +72,27 @@ define(function(require) {
 		this.isDragging = false;
 	};
 	
+	// Handle dragging
 	View.onMouseMove = function(e) {
 		if(!this.isMouseDown) return;
 		this.isDragging = true;
 
-		//get current x position relative to the div
-		var x = e.pageX - this.$el.offset().left;
-
-		//constrain the movement by bounds and move the dragger
-		if(x >= 0 && x <= this.$el.width()) {
-			var exp = Math.pow(x/this.divisor, this.power);
-			app.trigger('updateOutput', {exp: exp});
-			this.$grabber.css('left', x - (this.$grabber.width()/2));
-		}
+		// Get current x position relative to the div
+		var x = e.pageX - this.offset_left;
+		
+		// Constrain the movement by bounds and move the dragger
+		x = Math.max(0, Math.min(x, this.width));
+		this.$grabber.css('left', x - this.grabber_width/2);
+		
+		// Tell output about the change
+		app.trigger('updateOutput', {x:x, meters: this.scale(x)});
+		
 	};
 
 	View.initialPotition = function() {
 		var x = this.$el.offset().left - 60;
-		var exp = Math.pow(x/this.divisor, this.power);
-		_.defer(function() { app.trigger('updateOutput', {exp: exp}); });
+		var exp = this.scale(x);
+		_.defer(function() { app.trigger('updateOutput', {meters: exp}); });
 	};
 
 	// Return the view
