@@ -326,7 +326,7 @@ p.white.description {
 /* line 18, sass/partials/_converter.scss */
 .converter .input input[type=text] {
   border: 2px solid white;
-  width: 200px;
+  width: 250px;
   padding: 10px 0px;
   font-size: 30px;
   text-align: center;
@@ -347,7 +347,7 @@ p.white.description {
   position: relative;
   margin-top: -2px;
   display: inline-block;
-  width: 204px;
+  width: 254px;
   background-color: #fff;
   border-left: 3px solid white;
   border-right: 3px solid white;
