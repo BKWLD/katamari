@@ -6,6 +6,8 @@ body {
   background-color: #0770b1;
   position: relative;
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   @include background-image(linear-gradient(#0770b1, #99cde3));
 }
 

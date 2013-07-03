@@ -80,6 +80,8 @@ body {
   background-color: #0770b1;
   position: relative;
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0770b1), color-stop(100%, #99cde3));
   background-image: -webkit-linear-gradient(#0770b1, #99cde3);
   background-image: -moz-linear-gradient(#0770b1, #99cde3);
@@ -87,7 +89,7 @@ body {
   background-image: linear-gradient(#0770b1, #99cde3);
 }
 
-/* line 12, sass/partials/_common.scss */
+/* line 14, sass/partials/_common.scss */
 h2 {
   font-family: "Sniglet";
   margin-bottom: 20px;
@@ -97,12 +99,12 @@ h2 {
   font-size: 32px;
   margin-top: 100px;
 }
-/* line 21, sass/partials/_common.scss */
+/* line 23, sass/partials/_common.scss */
 h2 a {
   color: #222;
 }
 
-/* line 26, sass/partials/_common.scss */
+/* line 28, sass/partials/_common.scss */
 #wrap {
   position: relative;
   width: 800px;
@@ -111,14 +113,14 @@ h2 a {
   padding: 120px 0 50px 0px;
 }
 
-/* line 34, sass/partials/_common.scss */
+/* line 36, sass/partials/_common.scss */
 .sun {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-/* line 40, sass/partials/_common.scss */
+/* line 42, sass/partials/_common.scss */
 .middle {
   position: absolute;
   top: 50px;
@@ -130,7 +132,7 @@ h2 a {
   text-shadow: 2px 2px 0px #cc30e5;
 }
 
-/* line 51, sass/partials/_common.scss */
+/* line 53, sass/partials/_common.scss */
 p.white {
   line-height: 20px;
   margin: 0 auto;
@@ -138,34 +140,34 @@ p.white {
   font-size: 20px;
   line-height: 30px;
 }
-/* line 58, sass/partials/_common.scss */
+/* line 60, sass/partials/_common.scss */
 p.white.description {
   font-size: 28px;
   line-height: 1.5em;
 }
 
-/* line 64, sass/partials/_common.scss */
+/* line 66, sass/partials/_common.scss */
 .module {
   padding: 30px;
   height: 200px;
   position: relative;
 }
 
-/* line 70, sass/partials/_common.scss */
+/* line 72, sass/partials/_common.scss */
 .cta {
   padding-top: 30px;
 }
-/* line 73, sass/partials/_common.scss */
+/* line 75, sass/partials/_common.scss */
 .cta ul {
   text-align: center;
   width: 100%;
 }
-/* line 77, sass/partials/_common.scss */
+/* line 79, sass/partials/_common.scss */
 .cta ul li {
   display: inline-block;
   margin: 20px;
 }
-/* line 81, sass/partials/_common.scss */
+/* line 83, sass/partials/_common.scss */
 .cta ul li a {
   font-family: "Sniglet";
   display: inline;
@@ -190,7 +192,7 @@ p.white.description {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 95, sass/partials/_common.scss */
+/* line 97, sass/partials/_common.scss */
 .cta ul li a:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f150ec), color-stop(100%, #ff74f7));
   background-image: -webkit-linear-gradient(#f150ec, #ff74f7);
