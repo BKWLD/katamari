@@ -25,7 +25,7 @@ define(function(require) {
 		this.$scale = this.$('.scale');
 
 		// throttled mouse move
-		var throttledMouseMove = _.throttle(this.onMouseMove, 100);
+		var throttledMouseMove = _.throttle(this.onMouseMove, 20);
 		this.$el.on('mousemove', throttledMouseMove);
 
 		//set up the initial positining here

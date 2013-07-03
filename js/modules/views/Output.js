@@ -23,7 +23,7 @@ define(function(require) {
 		this.$icons = this.$('.icons');
 		
 		// listen for output change
-		app.on('updateOutput', this.updateOutput);
+		// app.on('updateOutput', this.updateOutput);
 	};
 
 	// Update the output view here

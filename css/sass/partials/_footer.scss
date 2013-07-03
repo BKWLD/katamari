@@ -4,7 +4,7 @@
 	margin-bottom: 200px;
 
 	.txtbox {
-		padding: 30px;
+		padding: 15px;
 		width: 350px;
 		background-color: rgba(0, 0, 0, .08);
 		@include border-radius(15px);
@@ -24,7 +24,7 @@
 				font-weight: 900;
 				text-decoration: none;
 
-				&:hover { color: magenta; }
+				&:hover { color: $magenta; }
 			}
 
 			strong { font-weight: 900; }

@@ -1,27 +1,27 @@
 h1.logo {
-	// font-family: "Sniglet";
-	// font-weight: 900;
-	// color: #222;
-	// font-size: 120px;
-	margin-bottom: 40px;
+	font-family: "Sniglet";
+	font-weight: 900;
+	color: #222;
+	font-size: 120px;
+	margin-bottom: 90px;
 	text-align: center;
-	// -webkit-text-stroke-width: 5px;
-	// -webkit-text-stroke-color: white;
-	// letter-spacing: -10px;
-	// box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+	-webkit-text-stroke-width: 5px;
+	-webkit-text-stroke-color: white;
+	letter-spacing: -10px;
+	text-shadow: 0 0 20px rgba(0, 0, 0, .8);
 
-	// span {
-	// 	cursor: pointer;
+	span {
+		cursor: pointer;
 
-	// 	&.c1 { color: #fe0d74; }	
-	// 	&.c2 { color: #fbb100; }	
-	// 	&.c3 { color: #fff904; }	
-	// 	&.c4 { color: #9cfa20; }	
-	// 	&.c5 { color: #3bfdfd; }	
-	// 	&.c6 { color: #4909fe; }	
-	// 	&.c7 { color: #d425fe; }	
-	// 	&.c8 { color: #f922f0; }	
-	// }
+		&.c1 { color: #fe0d74; }	
+		&.c2 { color: #fbb100; }	
+		&.c3 { color: #fff904; }	
+		&.c4 { color: #9cfa20; }	
+		&.c5 { color: #3bfdfd; }	
+		&.c6 { color: #4909fe; }	
+		&.c7 { color: #d425fe; }	
+		&.c8 { color: #f922f0; }	
+	}
 	
 }
 
