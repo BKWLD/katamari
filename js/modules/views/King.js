@@ -15,7 +15,7 @@ define(function(require) {
 		vertical: 'none',
 		minY: 0,
 		maxY: $(window).height(),
-		randomDelay: 5000,
+		randomDelay: 10000,
 		speed: 1
 	};
 	
