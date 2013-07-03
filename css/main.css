@@ -375,52 +375,8 @@ p.white {
 
 /* line 1, sass/partials/_logo.scss */
 h1.logo {
-  font-family: "Sniglet";
-  font-weight: 900;
-  color: #222;
-  font-size: 120px;
   margin-bottom: 40px;
   text-align: center;
-  -webkit-text-stroke-width: 5px;
-  -webkit-text-stroke-color: white;
-  letter-spacing: -10px;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-}
-/* line 13, sass/partials/_logo.scss */
-h1.logo span {
-  cursor: pointer;
-}
-/* line 16, sass/partials/_logo.scss */
-h1.logo span.c1 {
-  color: #fe0d74;
-}
-/* line 17, sass/partials/_logo.scss */
-h1.logo span.c2 {
-  color: #fbb100;
-}
-/* line 18, sass/partials/_logo.scss */
-h1.logo span.c3 {
-  color: #fff904;
-}
-/* line 19, sass/partials/_logo.scss */
-h1.logo span.c4 {
-  color: #9cfa20;
-}
-/* line 20, sass/partials/_logo.scss */
-h1.logo span.c5 {
-  color: #3bfdfd;
-}
-/* line 21, sass/partials/_logo.scss */
-h1.logo span.c6 {
-  color: #4909fe;
-}
-/* line 22, sass/partials/_logo.scss */
-h1.logo span.c7 {
-  color: #d425fe;
-}
-/* line 23, sass/partials/_logo.scss */
-h1.logo span.c8 {
-  color: #f922f0;
 }
 
 /* line 1, sass/partials/_footer.scss */

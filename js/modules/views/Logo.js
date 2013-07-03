@@ -17,13 +17,13 @@ define(function(require) {
 	// Constructor
 	View.initialize = function() {
 		_.bindAll(this);
-		this.buildLogo();
+		//this.buildLogo();
 	};
 
 	// Events
 	View.events = {
-		'mouseover span': 'onLetterOver',
-		'mouseout span': 'onLetterOut'
+		// 'mouseover span': 'onLetterOver',
+		// 'mouseout span': 'onLetterOut'
 	};
 
 	// Build Logo
