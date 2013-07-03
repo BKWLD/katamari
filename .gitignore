@@ -42,17 +42,4 @@ _assets
 intermediate
 publish
 /node_modules
-
-# Ignore CSS in common LESS paths
-less/*.css
-less/*/*.css
-
-# Laravel
-/bootstrap/compiled.php
-/vendor
-composer.phar
-/app/config/local
-
-# Decoy
-/public/uploads/*
-/public/packages/*
+/Design/
