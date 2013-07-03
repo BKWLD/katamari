@@ -78,8 +78,6 @@ body {
   font-family: "Raleway";
   font-weight: 400;
   background-color: #0770b1;
-  position: relative;
-  height: 100%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0770b1), color-stop(100%, #99cde3));
   background-image: -webkit-linear-gradient(#0770b1, #99cde3);
   background-image: -moz-linear-gradient(#0770b1, #99cde3);
@@ -87,7 +85,7 @@ body {
   background-image: linear-gradient(#0770b1, #99cde3);
 }
 
-/* line 11, sass/partials/_common.scss */
+/* line 9, sass/partials/_common.scss */
 h2 {
   font-family: "Sniglet";
   font-size: 17px;
@@ -96,14 +94,14 @@ h2 {
   color: white;
   text-shadow: 2px 2px 0 magenta;
   font-size: 26px;
-  margin-top: 50px;
+  margin-top: 100px;
 }
-/* line 21, sass/partials/_common.scss */
+/* line 19, sass/partials/_common.scss */
 h2 a {
   color: #222;
 }
 
-/* line 26, sass/partials/_common.scss */
+/* line 24, sass/partials/_common.scss */
 #wrap {
   position: relative;
   width: 800px;
@@ -111,14 +109,26 @@ h2 a {
   margin: 50px auto;
 }
 
-/* line 33, sass/partials/_common.scss */
-.king {
+/* line 31, sass/partials/_common.scss */
+.sun {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 0;
+  left: 0;
 }
 
-/* line 39, sass/partials/_common.scss */
+/* line 37, sass/partials/_common.scss */
+.middle {
+  position: absolute;
+  top: 50px;
+  left: 48%;
+  font-size: 80px;
+  font-weight: 900;
+  font-family: "Sniglet";
+  color: #fff;
+  text-shadow: 3px 3px 0px magenta;
+}
+
+/* line 48, sass/partials/_common.scss */
 p.white {
   line-height: 20px;
   margin: 0 auto;
@@ -127,26 +137,28 @@ p.white {
   line-height: 30px;
 }
 
-/* line 47, sass/partials/_common.scss */
+/* line 56, sass/partials/_common.scss */
 .module {
   padding: 30px;
+  height: 200px;
+  position: relative;
 }
 
-/* line 51, sass/partials/_common.scss */
+/* line 62, sass/partials/_common.scss */
 .cta {
   padding-top: 30px;
 }
-/* line 54, sass/partials/_common.scss */
+/* line 65, sass/partials/_common.scss */
 .cta ul {
   text-align: center;
   width: 100%;
 }
-/* line 58, sass/partials/_common.scss */
+/* line 69, sass/partials/_common.scss */
 .cta ul li {
   display: inline-block;
   margin: 20px;
 }
-/* line 62, sass/partials/_common.scss */
+/* line 73, sass/partials/_common.scss */
 .cta ul li a {
   font-family: "Sniglet";
   display: inline;
@@ -171,7 +183,7 @@ p.white {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 78, sass/partials/_common.scss */
+/* line 89, sass/partials/_common.scss */
 .cta ul li a:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f150ec), color-stop(100%, #ff74f7));
   background-image: -webkit-linear-gradient(#f150ec, #ff74f7);
@@ -182,9 +194,10 @@ p.white {
 
 /* line 1, sass/partials/_slider.scss */
 .slider {
-  position: relative;
-  width: 100%;
-  height: 50px;
+  position: absolute;
+  width: 42%;
+  left: 0;
+  height: 100px;
   margin: 20px auto 40px auto;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -193,108 +206,76 @@ p.white {
   -ms-user-select: none;
   user-select: none;
 }
-/* line 13, sass/partials/_slider.scss */
+/* line 14, sass/partials/_slider.scss */
 .slider .grabber {
-  position: absolute;
-  width: 30px;
-  height: 15px;
-  background-color: #777;
-  border: 1px solid #555555;
-  top: 10px;
-  left: 10px;
+  width: 63px;
+  height: 63px;
+  background-image: url(../img/ball.png);
+  position: relative;
   z-index: 2;
   cursor: pointer;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
   -webkit-transition: all 100ms ease-out;
   -moz-transition: all 100ms ease-out;
   -o-transition: all 100ms ease-out;
   transition: all 100ms ease-out;
 }
-/* line 26, sass/partials/_slider.scss */
+/* line 23, sass/partials/_slider.scss */
 .slider .grabber:hover {
-  -webkit-transform: scale(1.2, 1.2);
-  -moz-transform: scale(1.2, 1.2);
-  -ms-transform: scale(1.2, 1.2);
-  -o-transform: scale(1.2, 1.2);
-  transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
 }
-/* line 31, sass/partials/_slider.scss */
+/* line 28, sass/partials/_slider.scss */
 .slider .bg {
   position: absolute;
-  height: 1px;
+  height: 2px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #fff;
   z-index: 1;
-  top: 18px;
+  top: 30px;
 }
-/* line 40, sass/partials/_slider.scss */
+/* line 37, sass/partials/_slider.scss */
 .slider .scale {
   position: absolute;
   top: 40px;
   width: 100%;
 }
-/* line 46, sass/partials/_slider.scss */
+/* line 43, sass/partials/_slider.scss */
 .slider .scale li {
   position: absolute;
   width: 100px;
   text-align: center;
   font-size: 10px;
-  color: #555;
+  color: #fff;
+  top: -30px;
 }
-/* line 53, sass/partials/_slider.scss */
-.slider .scale li.one {
+/* line 51, sass/partials/_slider.scss */
+.slider .scale li.left {
   left: 0;
+  text-align: left;
 }
-/* line 54, sass/partials/_slider.scss */
-.slider .scale li.two {
-  left: 15%;
-}
-/* line 55, sass/partials/_slider.scss */
-.slider .scale li.three {
-  left: 30%;
-}
-/* line 56, sass/partials/_slider.scss */
-.slider .scale li.four {
-  left: 45%;
-}
-/* line 57, sass/partials/_slider.scss */
-.slider .scale li.five {
-  left: 60%;
-}
-/* line 58, sass/partials/_slider.scss */
-.slider .scale li.six {
-  left: 75%;
-}
-/* line 59, sass/partials/_slider.scss */
-.slider .scale li.seven {
-  left: 90%;
+/* line 52, sass/partials/_slider.scss */
+.slider .scale li.right {
+  right: 0;
+  text-align: right;
 }
 
 /* line 1, sass/partials/_output.scss */
 .output {
-  position: relative;
-  margin: 30px 0px;
+  position: absolute;
+  width: 42%;
+  right: 0;
 }
-/* line 5, sass/partials/_output.scss */
+/* line 6, sass/partials/_output.scss */
 .output .icons {
   position: relative;
   overflow: hidden;
   display: block;
   margin: 30px 0;
-  background-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  border-radius: 10px;
 }
-/* line 15, sass/partials/_output.scss */
+/* line 13, sass/partials/_output.scss */
 .output .icons .icon {
   position: relative;
   width: 50px;
@@ -302,7 +283,7 @@ p.white {
   float: left;
   margin-right: 2px;
 }
-/* line 22, sass/partials/_output.scss */
+/* line 20, sass/partials/_output.scss */
 .output .icons .icon span {
   position: absolute;
   top: 0;
@@ -310,11 +291,11 @@ p.white {
   width: 100%;
   height: 100%;
 }
-/* line 32, sass/partials/_output.scss */
+/* line 30, sass/partials/_output.scss */
 .output p {
   margin: 10px 0;
 }
-/* line 34, sass/partials/_output.scss */
+/* line 32, sass/partials/_output.scss */
 .output p span {
   font-weight: 900;
 }
@@ -357,17 +338,6 @@ p.white {
   border-top-right-radius: 7px;
 }
 /* line 31, sass/partials/_converter.scss */
-.converter .middle {
-  position: absolute;
-  top: 50px;
-  left: 48%;
-  font-size: 80px;
-  font-weight: 900;
-  font-family: "Sniglet";
-  color: #fff;
-  text-shadow: 3px 3px 0px magenta;
-}
-/* line 42, sass/partials/_converter.scss */
 .converter select {
   position: relative;
   margin-top: -2px;
@@ -395,7 +365,7 @@ p.white {
   -webkit-border-bottom-right-radius: 7px;
   border-bottom-right-radius: 7px;
 }
-/* line 64, sass/partials/_converter.scss */
+/* line 53, sass/partials/_converter.scss */
 .converter select:hover {
   background-color: white;
 }

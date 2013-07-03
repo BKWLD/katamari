@@ -71,7 +71,7 @@ define(function(require) {
 			var icon = $('<div>').addClass('icon');
 			var span = $('<span>');
 			icon.append(span);
-			span.css('background-image', 'url("img/tmp/' + iconImage + '")');
+			span.css('background-image', 'url("img/icons/' + iconImage + '")');
 			this.$icons.append(icon);
 		}
 
@@ -80,7 +80,7 @@ define(function(require) {
 			var icon = $('<div>').addClass('icon');
 			var span = $('<span>');
 			icon.append(span);
-			span.css('background-image', 'url("img/tmp/' + iconImage + '")');
+			span.css('background-image', 'url("img/icons/' + iconImage + '")');
 			span.css('width', remainder*100 + '%');
 			this.$icons.append(icon);
 		}

@@ -3,8 +3,6 @@ body {
   font-family: "Raleway";
   font-weight: 400;
   background-color: #0770b1;
-  position: relative;
-  height: 100%;
   @include background-image(linear-gradient(#0770b1, #99cde3));
 }
 
@@ -16,7 +14,7 @@ h2 {
 	color: white;
 	text-shadow: 2px 2px 0 magenta;
 	font-size: 26px;
-	margin-top: 50px;
+	margin-top: 100px;
 
 	a {
 		color: #222;
@@ -30,10 +28,21 @@ h2 {
   margin: 50px auto;
 }
 
-.king {
+.sun {
 	position: absolute;
-	bottom: 0;
-	right: 0;
+	top: 0;
+	left: 0;
+}
+
+.middle {
+	position: absolute;
+	top: 50px;
+	left: 48%;
+	font-size: 80px;
+	font-weight: 900;
+	font-family: "Sniglet";
+	color: #fff;
+	text-shadow: 3px 3px 0px magenta;
 }
 
 p.white {
@@ -46,6 +55,8 @@ p.white {
 
 .module {
 	padding: 30px;
+	height: 200px;
+	position: relative;
 }
 
 .cta {

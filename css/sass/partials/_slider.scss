@@ -1,7 +1,8 @@
 .slider {
-	position: relative;
-	width: 100%;
-	height: 50px;
+	position: absolute;
+	width: 42%;
+	left: 0;
+	height: 100px;
 	margin: 20px auto 40px auto;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -11,30 +12,26 @@
 	user-select: none;
 
 	.grabber {
-		position: absolute;
-		width: 30px;
-		height: 15px;
-		background-color: #777;
-		border: 1px solid #555;
-		top: 10px;
-		left: 10px;
+		width: 63px;
+		height: 63px;
+		background-image: url(../img/ball.png);
+		position: relative;
 		z-index: 2;
 		cursor: pointer;
-		@include border-radius(3px);
 		@include transition(all 100ms ease-out);
 
 		&:hover {
-			@include scale(1.2);
+			@include scale(1.1);
 		}
 	}
 
 	.bg {
 		position: absolute;
-		height: 1px;
+		height: 2px;
 		width: 100%;
-		background-color: rgba(0, 0, 0, .7);
+		background-color: #fff;
 		z-index: 1;
-		top: 18px;
+		top: 30px;
 	}
 
 	.scale {
@@ -48,15 +45,11 @@
 			width: 100px;
 			text-align: center;
 			font-size: 10px;
-			color: #555;
+			color: #fff;
+			top: -30px;
 
-			&.one { left: 0; }
-			&.two { left: 15%; }
-			&.three { left: 30%; }
-			&.four { left: 45%; }
-			&.five { left: 60%; }
-			&.six { left: 75%; }
-			&.seven { left: 90%; }
+			&.left { left: 0; text-align: left; }
+			&.right { right: 0; text-align: right; }
 
 		}
 	}
