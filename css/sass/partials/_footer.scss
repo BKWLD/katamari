@@ -37,12 +37,20 @@
 
 	.rainbow {
 		position: absolute;
-		z-index: 1;
-		width: 534px;
-		height: 279px;
-		right: 0;
-		bottom: 150px;
-		background-image: url(../img/rainbow.png);
+		width: 100%;
+		min-width: 900px;
+
+		.inner {
+			position: absolute;
+			z-index: 1;
+			width: 534px;
+			height: 279px;
+			right: 0;
+			bottom: 150px;
+			background-image: url(../img/rainbow.png);
+
+			@include respond-to(1100px, down) { right: -150px; }	
+		}
 	}
 
 	.hills {

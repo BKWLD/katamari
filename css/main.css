@@ -471,6 +471,12 @@ h1.logo span.c8 {
 /* line 38, sass/partials/_footer.scss */
 .bottom-graphic .rainbow {
   position: absolute;
+  width: 100%;
+  min-width: 900px;
+}
+/* line 43, sass/partials/_footer.scss */
+.bottom-graphic .rainbow .inner {
+  position: absolute;
   z-index: 1;
   width: 534px;
   height: 279px;
@@ -478,7 +484,13 @@ h1.logo span.c8 {
   bottom: 150px;
   background-image: url(../img/rainbow.png);
 }
-/* line 48, sass/partials/_footer.scss */
+@media (max-width: 1100px) {
+  /* line 43, sass/partials/_footer.scss */
+  .bottom-graphic .rainbow .inner {
+    right: -150px;
+  }
+}
+/* line 56, sass/partials/_footer.scss */
 .bottom-graphic .hills {
   position: absolute;
   height: 300px;
