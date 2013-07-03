@@ -74,6 +74,12 @@ define(function(require) {
 
 	// Event on key down, is arrow key?
 	View.onKeyDown = function(e) {
+
+		if(e.keyCode == 187) this.speed++;
+		if(e.keyCode == 189) {
+			if(this.speed > 1) this.speed--;
+		}
+
 		if(e.keyCode < 37 || e.keyCode > 40 || !this.isActive) return;
 		e.preventDefault();
 
