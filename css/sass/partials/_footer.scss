@@ -1,0 +1,58 @@
+.footer {
+	position: relative;
+	margin-top: 200px;
+	margin-bottom: 200px;
+
+	.txtbox {
+		padding: 30px;
+		width: 350px;
+		background-color: rgba(0, 0, 0, .08);
+		@include border-radius(15px);
+
+		p {
+			color: #fff;
+			color: rgba(255, 255, 255, .6);
+			font-size: 13px;
+			line-height: 19px;
+
+			&:first-child { margin-bottom: 20px; }
+
+
+			a {
+				color: #fff;
+				color: rgba(255, 255, 255, .6);
+				font-weight: 900;
+				text-decoration: none;
+
+				&:hover { color: magenta; }
+			}
+
+			strong { font-weight: 900; }
+		}
+	}
+}
+
+/* Bottom Graphic */
+.bottom-graphic {
+
+	.rainbow {
+		position: absolute;
+		z-index: 1;
+		width: 534px;
+		height: 279px;
+		right: 0;
+		bottom: 150px;
+		background-image: url(../img/rainbow.png);
+	}
+
+	.hills {
+		position: absolute;
+		height: 300px;
+		width: 100%;
+		min-width: 900px;
+		bottom: 0;
+		background-image: url(../img/hills.png);
+		@include background-size(100% 100%);
+		z-index: 2;
+	}
+}

@@ -72,12 +72,14 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Views */
-/* line 1, sass/partials/_common.scss */
+/* line 2, sass/partials/_common.scss */
 body {
   color: #222;
   font-family: "Raleway";
   font-weight: 400;
   background-color: #0770b1;
+  position: relative;
+  height: 100%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0770b1), color-stop(100%, #99cde3));
   background-image: -webkit-linear-gradient(#0770b1, #99cde3);
   background-image: -moz-linear-gradient(#0770b1, #99cde3);
@@ -85,7 +87,7 @@ body {
   background-image: linear-gradient(#0770b1, #99cde3);
 }
 
-/* line 9, sass/partials/_common.scss */
+/* line 12, sass/partials/_common.scss */
 h2 {
   font-family: "Sniglet";
   font-size: 17px;
@@ -96,27 +98,28 @@ h2 {
   font-size: 26px;
   margin-top: 100px;
 }
-/* line 19, sass/partials/_common.scss */
+/* line 22, sass/partials/_common.scss */
 h2 a {
   color: #222;
 }
 
-/* line 24, sass/partials/_common.scss */
+/* line 27, sass/partials/_common.scss */
 #wrap {
   position: relative;
   width: 800px;
   min-height: 1500px;
-  margin: 50px auto;
+  margin: 0 auto;
+  padding: 50px 0px;
 }
 
-/* line 31, sass/partials/_common.scss */
+/* line 35, sass/partials/_common.scss */
 .sun {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-/* line 37, sass/partials/_common.scss */
+/* line 41, sass/partials/_common.scss */
 .middle {
   position: absolute;
   top: 50px;
@@ -128,7 +131,7 @@ h2 a {
   text-shadow: 3px 3px 0px magenta;
 }
 
-/* line 48, sass/partials/_common.scss */
+/* line 52, sass/partials/_common.scss */
 p.white {
   line-height: 20px;
   margin: 0 auto;
@@ -137,28 +140,28 @@ p.white {
   line-height: 30px;
 }
 
-/* line 56, sass/partials/_common.scss */
+/* line 60, sass/partials/_common.scss */
 .module {
   padding: 30px;
   height: 200px;
   position: relative;
 }
 
-/* line 62, sass/partials/_common.scss */
+/* line 66, sass/partials/_common.scss */
 .cta {
   padding-top: 30px;
 }
-/* line 65, sass/partials/_common.scss */
+/* line 69, sass/partials/_common.scss */
 .cta ul {
   text-align: center;
   width: 100%;
 }
-/* line 69, sass/partials/_common.scss */
+/* line 73, sass/partials/_common.scss */
 .cta ul li {
   display: inline-block;
   margin: 20px;
 }
-/* line 73, sass/partials/_common.scss */
+/* line 77, sass/partials/_common.scss */
 .cta ul li a {
   font-family: "Sniglet";
   display: inline;
@@ -183,7 +186,7 @@ p.white {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 89, sass/partials/_common.scss */
+/* line 93, sass/partials/_common.scss */
 .cta ul li a:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f150ec), color-stop(100%, #ff74f7));
   background-image: -webkit-linear-gradient(#f150ec, #ff74f7);
@@ -418,4 +421,74 @@ h1.logo span.c7 {
 /* line 23, sass/partials/_logo.scss */
 h1.logo span.c8 {
   color: #f922f0;
+}
+
+/* line 1, sass/partials/_footer.scss */
+.footer {
+  position: relative;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+/* line 6, sass/partials/_footer.scss */
+.footer .txtbox {
+  padding: 30px;
+  width: 350px;
+  background-color: rgba(0, 0, 0, 0.08);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+/* line 12, sass/partials/_footer.scss */
+.footer .txtbox p {
+  color: #fff;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  line-height: 19px;
+}
+/* line 18, sass/partials/_footer.scss */
+.footer .txtbox p:first-child {
+  margin-bottom: 20px;
+}
+/* line 21, sass/partials/_footer.scss */
+.footer .txtbox p a {
+  color: #fff;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 900;
+  text-decoration: none;
+}
+/* line 27, sass/partials/_footer.scss */
+.footer .txtbox p a:hover {
+  color: magenta;
+}
+/* line 30, sass/partials/_footer.scss */
+.footer .txtbox p strong {
+  font-weight: 900;
+}
+
+/* Bottom Graphic */
+/* line 38, sass/partials/_footer.scss */
+.bottom-graphic .rainbow {
+  position: absolute;
+  z-index: 1;
+  width: 534px;
+  height: 279px;
+  right: 0;
+  bottom: 150px;
+  background-image: url(../img/rainbow.png);
+}
+/* line 48, sass/partials/_footer.scss */
+.bottom-graphic .hills {
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  min-width: 900px;
+  bottom: 0;
+  background-image: url(../img/hills.png);
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  z-index: 2;
 }
