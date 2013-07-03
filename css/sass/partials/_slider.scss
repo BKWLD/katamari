@@ -18,9 +18,10 @@
 		position: relative;
 		z-index: 2;
 		cursor: pointer;
-		@include transition(all 100ms ease-out);
+		@include transition(transform 50ms ease-out);
 
-		&:hover {
+		&:hover, &:active {
+			cursor: pointer;
 			@include scale(1.1);
 		}
 	}
