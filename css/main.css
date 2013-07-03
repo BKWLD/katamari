@@ -1,5 +1,5 @@
 /* Compass Utils */
-/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,45 +21,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -173,7 +173,7 @@ p.white.description {
   background-image: -moz-linear-gradient(#ff74f7, #f150ec);
   background-image: -o-linear-gradient(#ff74f7, #f150ec);
   background-image: linear-gradient(#ff74f7, #f150ec);
-  border: 4px solid #fff;
+  border: 4px solid white;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
@@ -476,6 +476,12 @@ h1.logo span.c8 {
 /* line 38, sass/partials/_footer.scss */
 .bottom-graphic .rainbow {
   position: absolute;
+  width: 100%;
+  min-width: 900px;
+}
+/* line 43, sass/partials/_footer.scss */
+.bottom-graphic .rainbow .inner {
+  position: absolute;
   z-index: 1;
   width: 534px;
   height: 279px;
@@ -483,7 +489,13 @@ h1.logo span.c8 {
   bottom: 150px;
   background-image: url(../img/rainbow.png);
 }
-/* line 48, sass/partials/_footer.scss */
+@media (max-width: 1100px) {
+  /* line 43, sass/partials/_footer.scss */
+  .bottom-graphic .rainbow .inner {
+    width: 400px;
+  }
+}
+/* line 56, sass/partials/_footer.scss */
 .bottom-graphic .hills {
   position: absolute;
   height: 300px;
@@ -496,4 +508,23 @@ h1.logo span.c8 {
   -o-background-size: 100% 100%;
   background-size: 100% 100%;
   z-index: 2;
+}
+
+/* line 1, sass/partials/_king.scss */
+#king {
+  position: absolute;
+  top: 0;
+  left: -77px;
+  width: 77px;
+  height: 66px;
+  z-index: -1;
+}
+/* line 9, sass/partials/_king.scss */
+#king img {
+  position: absolute;
+  display: none;
+}
+/* line 13, sass/partials/_king.scss */
+#king img.forward {
+  display: block;
 }

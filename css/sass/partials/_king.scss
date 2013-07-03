@@ -1,0 +1,16 @@
+#king {
+	position: absolute;
+	top: 0;
+	left: -77px;
+	width: 77px;
+	height: 66px;
+	z-index: -1;
+
+	img {
+		position: absolute;
+		display: none;
+
+		&.forward { display: block; }
+		&.backward { }
+	}
+}

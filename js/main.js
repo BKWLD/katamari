@@ -21,12 +21,14 @@ define('main', function (require) {
 		Slider = require('modules/views/Slider'),
 		Converter = require('modules/views/Converter'),
 		Output = require('modules/views/Output'),
-		Logo = require('modules/views/Logo');
+		Logo = require('modules/views/Logo'),
+		King = require('modules/views/King');
 	
 	// Instantiate backbone views
 	var slider = new Slider({el: $('.slider')[0]});
 	var output = new Output({el: $('.output')[0]});
 	var logo = new Logo({el: $('.logo')[0]});
+	var king = new King({el: $('#king')[0]});
 
 	// Conversion views
 	var conversionUnit = new Converter({el: $('.converter').find('.unit')[0]});
