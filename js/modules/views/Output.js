@@ -18,21 +18,19 @@ define(function(require) {
 		_.bindAll(this);
 		
 		// Selectors
-		this.$meters = this.$('.meters').find('span');
-		this.$katamari = this.$('.katamari').find('span');
+		this.$katamari = this.$('.katamari');
 		this.$icons = this.$('.icons');
 		
 		// listen for output change
-		// app.on('updateOutput', this.updateOutput);
+		app.on('updateOutput', this.updateOutput);
 	};
 
 	// Update the output view here
 	View.updateOutput = function(params) {
-		this.meters = Math.round(params.exp);
-		this.$meters.html(this.meters);
-		this.$katamari.html(katamari(this.meters));
+		var meters = params.meters;
+		this.$katamari.html(katamari(meters));
 
-		var detailedOutput = katamari(this.meters, 'default', {output: 'object'}),
+		var detailedOutput = katamari(meters, 'default', {output: 'object'}),
 			numIcons = Math.floor(detailedOutput.value),
 			remainder = detailedOutput.value - numIcons;
 		
