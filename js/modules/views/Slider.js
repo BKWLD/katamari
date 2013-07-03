@@ -26,6 +26,7 @@ define(function(require) {
 		this.width = this.$el.width();
 		this.grabber_width = this.$grabber.width();
 		this.offset_left = this.$el.offset().left;
+		this.$ouptut = this.$('.meters');
 
 		// throttled mouse move
 		var throttledMouseMove = _.throttle(this.onMouseMove, 20);
@@ -40,7 +41,7 @@ define(function(require) {
 		// Assign an initial position
 		_.defer(_.bind(function() {
 			var x = this.$grabber.position().left + this.grabber_width / 2;
-			app.trigger('updateOutput', {x:x, meters: this.scale(x)});
+			this.render(x);
 		}, this));
 		
 	};
@@ -80,14 +81,26 @@ define(function(require) {
 		// Get current x position relative to the div
 		var x = e.pageX - this.offset_left;
 		
+		// Update everything
+		this.render(x);
+	};
+	
+	// Update the display
+	View.render = function(x) {
+		
 		// Constrain the movement by bounds and move the dragger
-		x = Math.max(0, Math.min(x, this.width));
+		x = Math.max(1, Math.min(x, this.width));
 		this.$grabber.css('left', x - this.grabber_width/2);
 		
-		// Tell output about the change
-		app.trigger('updateOutput', {x:x, meters: this.scale(x)});
+		// Get meters
+		var meters = this.scale(x);
 		
-	};
+		// Update the meters
+		this.$ouptut.text(Math.round(meters*10)/10+' meters');
+		
+		// Tell output module about the change
+		app.trigger('updateOutput', {x:x, meters: meters});
+	}
 
 	View.initialPotition = function() {
 		var x = this.$el.offset().left - 60;
