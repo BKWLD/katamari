@@ -443,7 +443,7 @@ h1.logo {
 @media (max-width: 1100px) {
   /* line 43, sass/partials/_footer.scss */
   .bottom-graphic .rainbow .inner {
-    right: -150px;
+    width: 400px;
   }
 }
 /* line 56, sass/partials/_footer.scss */
@@ -459,4 +459,23 @@ h1.logo {
   -o-background-size: 100% 100%;
   background-size: 100% 100%;
   z-index: 2;
+}
+
+/* line 1, sass/partials/_king.scss */
+#king {
+  position: absolute;
+  top: 0;
+  left: -77px;
+  width: 77px;
+  height: 66px;
+  z-index: 9999;
+}
+/* line 9, sass/partials/_king.scss */
+#king img {
+  position: absolute;
+  display: none;
+}
+/* line 13, sass/partials/_king.scss */
+#king img.forward {
+  display: block;
 }

@@ -49,7 +49,7 @@
 			bottom: 150px;
 			background-image: url(../img/rainbow.png);
 
-			@include respond-to(1100px, down) { right: -150px; }	
+			@include respond-to(1100px, down) { width: 400px; }	
 		}
 	}
 
