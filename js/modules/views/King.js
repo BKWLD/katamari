@@ -26,6 +26,8 @@ define(function(require) {
 		// Selectors
 		this.$forward = this.$el.find('.forward');
 		this.$backward = this.$el.find('.backward');
+		this.$forward_down = this.$el.find('.forward-down');
+		this.$backward_down = this.$el.find('.backward-down');
 
 		//window keydown event
 		$(window).on('keydown', this.onKeyDown);
@@ -64,6 +66,8 @@ define(function(require) {
 		this.$el.css('left', '-77px');
 		this.$forward.css('display', 'block');
 		this.$backward.css('display', 'none');
+		this.$forward_down.css('display', 'none');
+		this.$backward_down.css('display', 'none');
 		this.vertical = 'none';
 		this.speed = 1;
 
@@ -83,21 +87,28 @@ define(function(require) {
 		if(e.keyCode < 37 || e.keyCode > 40 || !this.isActive) return;
 		e.preventDefault();
 
+		this.$forward.css('display', 'none');
+		this.$backward.css('display', 'none');
+		this.$forward_down.css('display', 'none');
+		this.$backward_down.css('display', 'none');
+
 		// move the king in the direction you pressed
 		if(e.keyCode == 39) {
 			this.dir = 'forward';
 			this.vertical = 'none';
 			this.$forward.css('display', 'block');
-			this.$backward.css('display', 'none');
 		} else if(e.keyCode == 37) {
 			this.dir = 'backward';
 			this.vertical = 'none';
-			this.$forward.css('display', 'none');
 			this.$backward.css('display', 'block');
 		} else if(e.keyCode == 38) {
 			this.vertical = 'up';
+			if(this.dir == 'forward') this.$forward.css('display', 'block');
+			else this.$backward.css('display', 'block');
 		} else if(e.keyCode == 40) {
 			this.vertical = 'down';
+			if(this.dir == 'forward') this.$forward_down.css('display', 'block');
+			else this.$backward_down.css('display', 'block');
 		}
 	};
 
