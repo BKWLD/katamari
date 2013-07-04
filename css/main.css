@@ -301,11 +301,6 @@ p.white.description {
   height: 100%;
 }
 
-/* line 31, sass/partials/_output.scss */
-.slider .meters, .output .katamari {
-  text-align: center;
-}
-
 /* line 5, sass/partials/_converter.scss */
 .converter {
   position: relative;

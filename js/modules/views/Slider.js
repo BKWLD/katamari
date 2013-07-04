@@ -5,6 +5,7 @@ define(function(require) {
 	var $ = require('jquery'),
 		_ = require('underscore'),
 		Backbone = require('backbone'),
+		tram = require('plugins/tram'),
 		app = require('modules/app');
 	
 	// Init view
@@ -38,11 +39,20 @@ define(function(require) {
 		// Setup scale
 		this.setupScale();
 		
-		// Assign an initial position
-		_.defer(_.bind(function() {
-			var x = this.$grabber.position().left + this.grabber_width / 2;
-			this.render(x);
-		}, this));
+		// Roll out the Katamari
+		var from = (-this.offset_left - this.grabber_width), to = 20;
+		tram(this.$grabber)
+			.set({left: from})
+			.add('left 1s ease-out')
+			.add('transform 1s ease-out')
+			.start({left: to, rotate: 360})
+			.then(function() { this.stop() }); // Remove transforms
+			
+		
+		// Update output while that animation happens
+		tram.tween({ from: from, to: to, duration: 1000, ease: 'ease-out', update: _.bind(function(x) {
+			this.render(x + this.grabber_width/2, true);
+		}, this)});
 		
 	};
 
@@ -86,11 +96,11 @@ define(function(require) {
 	};
 	
 	// Update the display
-	View.render = function(x) {
+	View.render = function(x, dont_move_grabber) {
 		
 		// Constrain the movement by bounds and move the dragger
 		x = Math.max(1, Math.min(x, this.width));
-		this.$grabber.css('left', x - this.grabber_width/2);
+		if (!dont_move_grabber) this.$grabber.css('left', x - this.grabber_width/2);
 		
 		// Get meters
 		var meters = this.scale(x);
@@ -100,7 +110,7 @@ define(function(require) {
 		
 		// Tell output module about the change
 		app.trigger('updateOutput', {x:x, meters: meters});
-	}
+	};
 
 	View.initialPotition = function() {
 		var x = this.$el.offset().left - 60;
