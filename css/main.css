@@ -1,5 +1,5 @@
 /* Compass Utils */
-/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,60 +21,54 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
 /* Vars & Utilities */
-/* line 2, sass/utilities/_typography.scss */
-h1, h2, h3, h4, h5 {
-  font-weight: 200;
-  -webkit-font-smoothing: antialiased;
-}
-
 /* Views */
 /* line 2, sass/partials/_common.scss */
 body {
-  color: #222;
+  color: white;
   font-family: "Raleway";
   font-weight: 400;
   background-color: #0770b1;
@@ -87,24 +81,23 @@ body {
   background-image: -moz-linear-gradient(#0770b1, #99cde3);
   background-image: -o-linear-gradient(#0770b1, #99cde3);
   background-image: linear-gradient(#0770b1, #99cde3);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* line 14, sass/partials/_common.scss */
+/* line 15, sass/partials/_common.scss */
 h2 {
   font-family: "Sniglet";
   margin-bottom: 20px;
-  font-weight: 900;
-  color: white;
   text-shadow: 2px 2px 0 #cc30e5;
   font-size: 32px;
   margin-top: 100px;
 }
-/* line 23, sass/partials/_common.scss */
+/* line 22, sass/partials/_common.scss */
 h2 a {
   color: #222;
 }
 
-/* line 28, sass/partials/_common.scss */
+/* line 27, sass/partials/_common.scss */
 #wrap {
   position: relative;
   width: 800px;
@@ -113,14 +106,14 @@ h2 a {
   padding: 120px 0 50px 0px;
 }
 
-/* line 36, sass/partials/_common.scss */
+/* line 35, sass/partials/_common.scss */
 .sun {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-/* line 42, sass/partials/_common.scss */
+/* line 41, sass/partials/_common.scss */
 .middle {
   position: absolute;
   top: 50px;
@@ -128,59 +121,56 @@ h2 a {
   font-size: 80px;
   font-weight: 900;
   font-family: "Sniglet";
-  color: #fff;
   text-shadow: 2px 2px 0px #cc30e5;
 }
 
-/* line 53, sass/partials/_common.scss */
+/* line 51, sass/partials/_common.scss */
 p.white {
   line-height: 20px;
   margin: 0 auto;
-  color: #fff;
   font-size: 20px;
   line-height: 30px;
 }
-/* line 60, sass/partials/_common.scss */
+/* line 57, sass/partials/_common.scss */
 p.white.description {
   font-size: 28px;
   line-height: 1.5em;
 }
 
-/* line 66, sass/partials/_common.scss */
+/* line 63, sass/partials/_common.scss */
 .module {
   padding: 30px;
   height: 200px;
   position: relative;
 }
 
-/* line 72, sass/partials/_common.scss */
+/* line 69, sass/partials/_common.scss */
 .cta {
   padding-top: 30px;
 }
-/* line 75, sass/partials/_common.scss */
+/* line 72, sass/partials/_common.scss */
 .cta ul {
   text-align: center;
   width: 100%;
 }
-/* line 79, sass/partials/_common.scss */
+/* line 76, sass/partials/_common.scss */
 .cta ul li {
   display: inline-block;
   margin: 20px;
 }
-/* line 83, sass/partials/_common.scss */
+/* line 80, sass/partials/_common.scss */
 .cta ul li a {
   font-family: "Sniglet";
   display: inline;
   padding: 10px 20px 8px 20px;
   text-decoration: none;
-  font-weight: 900;
   font-size: 25px;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff74f7), color-stop(100%, #f150ec));
   background-image: -webkit-linear-gradient(#ff74f7, #f150ec);
   background-image: -moz-linear-gradient(#ff74f7, #f150ec);
   background-image: -o-linear-gradient(#ff74f7, #f150ec);
   background-image: linear-gradient(#ff74f7, #f150ec);
-  border: 4px solid white;
+  border: 4px solid #fff;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
@@ -192,13 +182,19 @@ p.white.description {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 97, sass/partials/_common.scss */
+/* line 93, sass/partials/_common.scss */
 .cta ul li a:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f150ec), color-stop(100%, #ff74f7));
   background-image: -webkit-linear-gradient(#f150ec, #ff74f7);
   background-image: -moz-linear-gradient(#f150ec, #ff74f7);
   background-image: -o-linear-gradient(#f150ec, #ff74f7);
   background-image: linear-gradient(#f150ec, #ff74f7);
+}
+
+/* line 100, sass/partials/_common.scss */
+.slider .meters, .output .katamari {
+  text-align: center;
+  font-size: 16px;
 }
 
 /* line 1, sass/partials/_slider.scss */
@@ -271,6 +267,10 @@ p.white.description {
   right: 0;
   text-align: right;
 }
+/* line 58, sass/partials/_slider.scss */
+.slider .meters {
+  margin-top: 28px;
+}
 
 /* line 1, sass/partials/_output.scss */
 .output {
@@ -284,6 +284,7 @@ p.white.description {
   overflow: hidden;
   display: block;
   margin: 30px 0;
+  min-height: 50px;
 }
 /* line 13, sass/partials/_output.scss */
 .output .icons .icon {
@@ -300,14 +301,6 @@ p.white.description {
   left: 0;
   width: 100%;
   height: 100%;
-}
-/* line 30, sass/partials/_output.scss */
-.output p {
-  margin: 10px 0;
-}
-/* line 32, sass/partials/_output.scss */
-.output p span {
-  font-weight: 900;
 }
 
 /* line 5, sass/partials/_converter.scss */
@@ -332,11 +325,10 @@ p.white.description {
 }
 /* line 18, sass/partials/_converter.scss */
 .converter .input input[type=text] {
-  border: 3px solid white;
-  width: 200px;
+  border: 2px solid white;
+  width: 250px;
   padding: 10px 0px;
   font-size: 30px;
-  font-weight: bold;
   text-align: center;
   color: white;
   background-color: transparent;
@@ -346,13 +338,16 @@ p.white.description {
   -moz-border-radius-topright: 7px;
   -webkit-border-top-right-radius: 7px;
   border-top-right-radius: 7px;
+  outline: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Raleway";
 }
-/* line 31, sass/partials/_converter.scss */
+/* line 33, sass/partials/_converter.scss */
 .converter select {
   position: relative;
   margin-top: -2px;
   display: inline-block;
-  width: 206px;
+  width: 254px;
   background-color: #fff;
   border-left: 3px solid white;
   border-right: 3px solid white;
@@ -360,13 +355,13 @@ p.white.description {
   border-top: 0px;
   cursor: pointer;
   left: 0;
-  padding: 5px 0px;
+  padding: 10px;
   font-size: 16px;
   line-height: 1;
-  height: 34px;
   -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
   text-align: center;
-  color: #98cce2;
+  color: #51a1cc;
   border-radius: 0;
   -moz-border-radius-bottomleft: 7px;
   -webkit-border-bottom-left-radius: 7px;
@@ -374,8 +369,11 @@ p.white.description {
   -moz-border-radius-bottomright: 7px;
   -webkit-border-bottom-right-radius: 7px;
   border-bottom-right-radius: 7px;
+  outline: 0;
+  font-weight: bold;
+  font-family: "Raleway";
 }
-/* line 53, sass/partials/_converter.scss */
+/* line 58, sass/partials/_converter.scss */
 .converter select:hover {
   background-color: white;
 }
