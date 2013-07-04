@@ -46,8 +46,7 @@ define(function(require) {
 			.add('left 1s ease-out')
 			.add('transform 1s ease-out')
 			.start({left: to, rotate: 360})
-			.then(function() { this.stop() }); // Remove transforms
-			
+			.then(function() { this.stop(); }); // Remove transforms
 		
 		// Update output while that animation happens
 		tram.tween({ from: from, to: to, duration: 1000, ease: 'ease-out', update: _.bind(function(x) {
