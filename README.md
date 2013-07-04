@@ -12,6 +12,8 @@ You can pass a hash of options to tweak the output:
 
 	katamari('0.02km', 'default', {precision: 3, output: 'object'}); // {value: 2.857, unit: "elephant", pluralled: "elephants"}
 
+Demo site: http://bkwld.github.io/katamari/
+
 ## Installation [![Build Status](https://travis-ci.org/BKWLD/katamari.png?branch=master)](https://travis-ci.org/BKWLD/katamari)
 
 Grab [dist/katamari.js](https://raw.github.com/BKWLD/katamari/master/dist/katamari.js) or [dist/katamari.min.js](https://raw.github.com/BKWLD/katamari/master/dist/katamari.min.js) from the repo.
